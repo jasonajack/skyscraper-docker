@@ -17,12 +17,12 @@ for dir in "${rom_paths[@]}"; do
 
   # Scrape for new or missing content
   if [ ${RUN_SCREENSCRAPER} -eq 1 ]; then
-    echo Skyscraper -c "${CONFIG_FILE}" -s screenscraper -p "${platform}"
+    Skyscraper -c "${CONFIG_FILE}" -s screenscraper -p "${platform}"
   fi
 
   # Regenerate gamelist.xml
-  echo Skyscraper -c "${CONFIG_FILE}" -p "${platform}" -o "/roms/${platform}"
+  Skyscraper -c "${CONFIG_FILE}" -p "${platform}" -o "/roms/${platform}"
 
   # Generate reports
-  echo Skyscraper -c "${CONFIG_FILE}" -p "${platform}" --cache "report:missing=${REPORT_TYPES}"
+  Skyscraper -c "${CONFIG_FILE}" -p "${platform}" --cache "report:missing=${REPORT_TYPES}"
 done
