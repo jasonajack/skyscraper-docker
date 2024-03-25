@@ -1,0 +1,19 @@
+---
+
+name: Docker Build CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build_and_test:
+    name: Run Docker build and CI tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build the Docker image
+      run: docker build -t docker.io/jasonajack/skyscraper:$(date +%s) .
