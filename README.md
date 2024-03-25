@@ -39,10 +39,11 @@ cacheRefresh="true"
 When your configuration is created, run the image simply:
 
 ```bash
-docker run \
+docker run --rm \
   -v /path/to/roms:/roms \
   -v /path/to/.skyscraper:/.skyscraper \
-  -v /path/to/config.ini:/config.ini
+  -v /path/to/config.ini:/config.ini \
+  jasonajack/skyscraper
 ```
 
 This will scan all platforms in your roms directory (assuming it is in the standard retroarch naming format). e.g.
