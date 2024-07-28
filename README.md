@@ -43,7 +43,7 @@ docker run --rm \
   -v /path/to/roms:/roms \
   -v /path/to/.skyscraper:/.skyscraper \
   -v /path/to/config.ini:/config.ini \
-  jasonajack/skyscraper
+  ghcr.io/jasonajack/skyscraper
 ```
 
 This will scan all platforms in your roms directory (assuming it is in the standard retroarch naming format). e.g.
@@ -64,7 +64,7 @@ version: "3"
 
 services:
   skyscraper:
-    image: jasonajack/skyscraper
+    image: ghcr.io/jasonajack/skyscraper
     volumes:
       - /path/to/roms:/roms
       - /path/to/.skyscraper:/.skyscraper
